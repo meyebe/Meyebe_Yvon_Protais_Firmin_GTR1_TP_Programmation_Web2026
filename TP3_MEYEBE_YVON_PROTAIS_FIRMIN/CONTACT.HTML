@@ -1,0 +1,77 @@
+ <!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title> Contact - Mon mini-site</title>
+</head>
+<body>
+ <h1> Page de contact</h1>   
+<nav> 
+ <a href="Index.htmt">Accueil</a>
+ <a href="Presentation.html">Présentation</a>
+ <a href="Contact.html">Contact</a>   
+</nav>
+<h2> Formulaire de contact</h2>
+<p> Veuillez remplire ce formulaire pour envoyer un message.</p>
+<form> 
+ <label for="nom">Nom :</label>
+<input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required>
+<br> 
+<br> 
+<label for="Prenom">Prénom :</label>
+<input type="texte" id=" Prenom" name=" Prenom" placeholder="Entrez votre Prénom" required>
+<br>
+<br>
+<label for="email">Adresse emaiil :</label>
+<input type="email" id="email" name="email" placeholder="exemple@email.com" required>
+<br>
+<br> 
+<label for="telephone">Telephone :</label>
+<input type="tel" id="telephone" name="telephone" placeholder="+237 6 xx xx xx xx">
+<br>
+<br>
+<label for="domaine">Domaine d'intéret :</label>
+<select id="domaine" name="domaine" required>
+<option value="">-- Choisir un domaine --</option>
+<option value="reseaux">Réseaux informatiques</option>
+<option value="cybersecurite">Cybersécurité</option>
+<option value="developpement-web">Développement web</option>
+<option value="administration-systeme">Administratin systeme</option>    
+</select>
+<br>
+<br>
+<label for="motif">Motif du message:</label>
+<select id="motif" name="motif" required>
+<option value="">-- choisir un motif--</option>
+<option value="information">Demande d'information</option>
+<option value="stage">Demande de stage</option>
+<option value="projet">Proposition de projet</option>
+<option value="autre">Autre demande</option>    
+</select>
+<br>
+<br>
+<p> Statut du visiteur :</p>
+<input type="radio" id="etudiant" name="statut" value="etudiant" required>
+<label for="etudiant">Etudiant</label>
+<br>
+<input type="radio" id="enseignant" name="statut" value="enseignant">
+<label for="enseignant">Enseignant</label>
+<br>
+<input type="radio" id=" Professionnel" name="statut" value="Professionnel">
+<label for="Professionnel">Professionnel</label>
+<br>
+<br>
+<label for="message">Message :</label>
+<br>
+<textarea id="message" name="message" rows="5" cols="40" placeholder="Ecrivez votre message ici" required></textarea>
+<br>
+<br>
+<input type="checkbox" id="confirmation" name="confirmation" required>
+<label for="confirmation">Je confirme que les information saisies sont correctec.</label>
+<br>
+<br>
+<button type="submit">Envoyer</button>
+<button type="reset">Effacer</button>
+</form>
+</body>
+</html> 
