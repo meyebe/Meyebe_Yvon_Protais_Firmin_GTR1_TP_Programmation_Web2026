@@ -1,0 +1,44 @@
+
+body {/* applique le style à tout la page */
+background-color: #f4f4f4; /* Définit une couleur de fond gris clair */
+font-family: Arial, sans-serif;*/change la police d'écriture */
+margin: 20px; */ Ajoute un espace autour du contenu */
+}
+
+h1 { */ Applique le style aux titre principaux */
+color: darkblue; /* centre de texte */ 
+}
+h2 { /* Applique le style aux sous-titre */
+color: #333; /* Définit une couleur gris foncé */
+}
+p { /* Applique le style aux paragraphe */
+font-size: 16px; /* Définit la taille du texte */
+line-height: 1.5; /* Améloire l'espacement entre les lignes */
+}
+a { /* Applique le style à tous les liens */ text-decoration: none; /* supprime le soulignement */ 
+color: rgb(115, 115, 143); /* Définit la couleur du lien */
+margin-right: 15px; /* Ajoute un espace entre les liens */
+}
+a:hover { /* Applique un style lorsque la souris passe sur le lien */
+color: red; /* change la couleur */
+}
+ul { /* Applique le style aux liste */
+background-color: lawngreen; /* Donne un fond blanc */
+padding: 10px; */ Ajoute un espace intérieur */
+} 
+li { Applique le style aux éléments de liste */
+margin-bottom: 5px; /* Ajoute un espace entre les éléments */
+}   
+img { /* Applique le sstyle aux images */
+border-radius: 10px; /* Arrondit un espace au-dessus */
+}
+.section {
+background-color: blue;
+padding: 15px;
+margin-bottom: 20px;
+border-radius: 5px;   
+}
+.highlight {
+color: green;
+font-weight: bold;    
+}
