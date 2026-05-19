@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Mon mini-site</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page">
+    <header>
+     <h1>Mon mini-site web</h1>
+     </header>
+    <nav>
+      <a href="Index.html">Accueil</a>   
+     <a href="Presentation.html">Presentation</a>
+     <a href="Contact.html">Contact</a>
+    </nav>
+    <div class="container">
+     <main>
+     
+        <div class="carte">
+     <h2>Developpement web</h2>
+     <p>Le developpement web permet de créer des pages, des sites et des application accessible depui un navigateur.</p>
+        </div>
+        <div class="carte">
+        <h2>Responsive design.</h2>
+        <p>Le Responsive design permet d'adapter automatiquement l'afficharge d'un site aux differents écrans.</p>
+        </div>
+        <h2>Informations</h2>
+        <p> Cette zone peut contenir des Informations supplémentaires.</p>
+           <section class="carte">
+            <h2>Message dynamique avec JavaScript</h2>
+            <p>Cette zone permet d'afficher un message personnalisé selon le nom et le domaine choisi.</p>
+            <label for="nomUtilisateur">Entrez votre nom :</label>
+            <input type="text" id="nomUtilisateur" placeholder="Exemple: Yannick">
+            <label for="domaineUtilisateur">Choisissez votre domaine d'intéret:</label>
+            <select id="domaineUtilisateur">
+                <option value="">-- Choisir un domaine--</option>
+                <option value="réseaux informatiques">Réseaux informatiques</option>
+                <option value="cybersécurité">Cybersécurité</option>
+                <option value="développement web">Développement web</option>
+                <option value="administration système">Administration système</option>
+            </select>
+            <button onclick="afficherMessage()">Afficher le message</button>
+            <button onclick="effacerMessage()">Effacer</button>
+            
+            <p id="messageResultat"></p>
+        </section>
+     </main>
+    </div>
+ <script>
+        function afficherMessage() {
+            let nom= document.getElementById("nomUtilisateur").value;
+            let domaine= document.getElementById("domaineUtilisateur").value;
+            let message="";
+            if (nom=== "" && domaine=== "") {
+                message= "Veuillez saisir votre nom et choisir un domaine d'intéret.";
+            }
+            else if (nom=== "") {
+                message= "Veuillez saisir votre nom.";
+            } 
+            else if (domaine=== "") {
+                message="Veuillez choisir un domaine d'intéret.";
+            }
+             else {
+                message= "Bienvenue," +nom+". Votre domaine d'intéret est: "+domaine+".";
+            }
+            document.getElementById("messageResultat").textContent= message;
+        }
+        function effacerMessage(){
+            document.getElementById("nomUtilisateur").value="";
+            document.getElementById("domaineUtilisateur").value="";
+            document.getElementById("messageResultat").textContent="";
+        }
+    </script>
+    <footer>
+        <p> 2026 - Mon mini-site</p>
+    </footer>
+   
+</body>
+</html>
