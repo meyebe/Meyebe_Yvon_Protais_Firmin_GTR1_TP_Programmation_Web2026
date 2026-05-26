@@ -1,0 +1,129 @@
+  <!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Contact - Mon mini-site</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+  <header>
+ <h1>Page de contact</h1>
+  </header>   
+<nav> 
+ <a href="Index.htmt">Accueil</a>
+ <a href="Presentation.html">Présentation</a>
+ <a href="Contact.html">Contact</a>   
+</nav>
+  <div class="container">
+    <main>
+<h2> Formulaire de contact</h2>
+<p> Veuillez remplire ce formulaire pour envoyer un message.</p>
+<form>
+  <section class="carte">
+    <h2>Formulaire d'inscription dynamique</h2>
+    <p>Ce formulaire utilise JavaScript pour vérifier dynamiquement les information saisies.</p>
+    <label for="nom">Nom complet :</label>
+    <input type="text" id="nom" placeholder="Entrez votre nom complet" oninput="verifierNom()">
+    <p id="erreurNom"></p>
+    <label for="email">Adresse email :</label>
+    <input type="email" id="email" placeholder="Exemple : etudiant@gmail.com">
+    <p id="erreurEmail"></p>
+    <label for="motDepasse">Mot de passe :</label>
+    <input type="password" id="motDepasse" placeholder="Entrez un mot de passe">
+    <p id="erreurMotDepasse"></p>
+    <label for="confirmationMotDepasse">Confirmation du mot de passe :</label>
+    <input type="password" id="confirmationMotDepasse" placeholder="Confirmez le mot de passe">
+    <p id="erreurConfirmation"></p>
+    <button onclick="validerFormulaire()">Valider le formulaire</button>
+    <button onclick="reinitialiserFormulaire()">Réinitialiser</button>
+    <p id="messageFinal"></p>
+  </section>
+</form>
+</div>
+<script>
+  function  validerFormulaire() {       
+    let nom= document.getElementById("nom").value;
+    let email= document.getElementById("email").value;
+    let motDepasse= document.getElementById("motDepasse").value;
+    let confirmation= document.getElementById("confirmationMotDepasse").value; 
+  
+    document.getElementById("erreurNom").textContent = "";
+    document.getElementById("erreurEmail").textContent = "";
+    document.getElementById("erreurMotDepasse").textContent = "";
+    document.getElementById("erreurConfirmation").textContent = "";
+    document.getElementById("messageFinal").textContent = "";
+    if (nom === "") {
+      document.getElementById("erreurNom").textContent= "Le nom est obligatoire.";
+      document.getElementById("nom").style.borderColor= "red";
+    } else {
+      document.getElementById("nom").style.borderColor= "green";
+    }
+    if(email === "") {
+      document.getElementById("erreurEmail").textContent= "L'adresse email est obligatoire.";
+      document.getElementById("email").style.borderColor= "red";
+    } else if (!email.includes("@")) {
+      document.getElementById("erreurEmail").textContent= "L'adresse email est invalide.";
+      document.getElementById("email").style.borderColor= "red";
+    } else {
+      document.getElementById("email").style.borderColor= "green";
+    }
+    if (motDepasse.length < 6) {
+      document.getElementById("erreurMotDepasse").textContent= "Le mot de passe doit contenir au moins 6 caractères.";
+      document.getElementById("motDepasse").style.borderColor= "red";
+    } else {
+      document.getElementById("motDepasse").style.borderColor= "green";
+    }
+    if (confirmation !== motDepasse) {
+      document.getElementById("erreurConfirmation").textContent= "Les mots de passe ne correspondent pas.";
+      document.getElementById("confirmationMotDepasse").style.borderColor= "red";
+    } else {
+      document.getElementById("confirmationMotDepasse").style.borderColor= "green";
+    }
+    if (
+      nom !== "" &&
+      email.includes("@") &&
+      motDepasse.length >= 6 &&
+      confirmation === motDepasse
+    ){
+      document.getElementById("messageFinal").textContent= "Le formulaire a ete valide avec succes.";
+      document.getElementById("messageFinal").style.color= "green";
+    } else {
+      document.getElementById("messageFinal").textContent= "Le formulaire contient des erreurs.";
+      document.getElementById("messageFinal").style.color= "red";
+    } 
+  }
+   
+  function reinitialiserFormulaire() {
+    document.getElementById("nom").value= "";
+    document.getElementById("email").value= "";
+    document.getElementById("motDepasse").value= "";
+    document.getElementById("confirmationMotDepasse").value= "";
+    document.getElementById("erreurNom").textContent= "";
+    document.getElementById("erreurEmail").textContent= "";
+    document.getElementById("erreurMotDepasse").textContent= "";
+    document.getElementById("erreurConfirmation").textContent= "";
+    document.getElementById("messageFinal").textContent= "";
+    document.getElementById("nom").style.borderColor= "#ccc";
+    document.getElementById("email").style.borderColor= "#ccc";
+    document.getElementById("motDepasse").style.borderColor= "#ccc";
+    document.getElementById("confirmationMotDepasse").style= "#ccc";
+  }
+  function verifierNom() {
+    let nom= document.getElementById("nom").value;
+    if (nom.length < 3) {
+      document.getElementById("erreurNom").textContent= "Le nom est trop court.";
+      document.getElementById("nom").style.borderColor= "red";
+    } else {
+      document.getElementById("erreurNom").textContent= "";
+      document.getElementById("nom").style.borderColor= "green";
+        }
+  }
+</script>
+    <footer>
+        <p> 2026 - Mon mini-site</p>
+    </footer>
+    </main>
+</body>
+</html>
